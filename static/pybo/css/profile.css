@@ -1,0 +1,199 @@
+
+/* 반응형은 모바일 기준으로 시작한다. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* header 스타일 */
+header {
+    width: 100%;
+    height: 250px;
+    background: url("../images/bg0.jpg") no-repeat;
+    background-size: cover;
+}
+
+
+nav,
+#logo a {
+    width: 100%;
+    height: 60px;
+    background: #787878;
+    line-height: 60px;
+}
+
+#logo {
+    float: left;
+    padding-left: 2%;
+    }
+
+#logo a {
+    text-decoration: none;
+        }
+
+#logo img {
+    display:block;
+    margin-top:7px;
+}
+
+#logo a:hover {
+    color: yellow;
+}
+
+
+#main-nav {
+    float: right;
+    list-style: none;
+    text-align: right;
+    padding-right:1%;
+}
+
+#main-nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#main-nav li a:link,
+a:visited {
+    text-decoration: none;
+    color: greenyellow
+}
+
+#main-nav li a:hover {
+    color: yellow
+}
+
+/* 본문스타일 */
+section {
+    width: 100%;
+    padding: 10px 5%;
+}
+
+section:nth-child(2n+1) {
+    background: rgb(222, 244, 253)
+}
+
+section .page-title {
+    padding: 15px;
+}
+
+section .content .photo {
+    display: none;
+}
+
+section .content .text p {
+    line-height: 1.5em;
+    padding-left: 30px;
+}
+
+section .content #career li {
+    margin-left: 50px;
+    line-height: 2em;
+}
+
+section .content #link {
+    padding-left: 30px
+}
+
+section .content #link li {
+    margin: 15px
+}
+
+section .content #link li a {
+    text-decoration: none;
+    color: black
+}
+
+/* footer 스타일 */
+footer {
+    height: 60px;
+    border-top: 2px solid #aaa
+}
+
+footer #bottommenu {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+footer #bottommenu ul {
+    list-style: none;
+}
+
+footer #bottommenu ul li {
+    display: inline;
+    padding: 0 20px;
+    border-right: 1px solid #ccc;
+}
+
+footer #bottommenu ul li:last-child {
+    border: none
+}
+
+footer #bottommenu ul li a {
+    text-decoration: none;
+    color: black
+}
+
+
+/* 태블릿 기준 - 보통 768px 이상으로 */
+@media screen and (min-width:768px) {
+    body {
+    margin-top: -1px;
+    }
+
+    header {
+        height: 300px;
+    }
+
+    #who,
+    #job {
+        float: left;
+        width: 50%;
+        height: 350px;
+        box-sizing: border-box;
+    }
+
+    #skill {
+        clear: both
+    }
+}
+
+/* pc기준- 보통 996px 이상 */
+@media screen and (min-width:996px) {
+    #container {
+        width: 996px;
+        margin: 0 auto;
+        border: 1px solid #eee;
+    }
+
+    header {
+        height: 320px;
+    }
+
+    #who,
+    #job,
+    #skill {
+        width: 100%;
+        height: 300px;
+    }
+
+    #who .photo {
+        float: left;
+        display: block;
+        margin: 10px 20px;
+    }
+
+    #skill .photo {
+        float: right;
+        display: block;
+        margin-right: 15%
+    }
+}

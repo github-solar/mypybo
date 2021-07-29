@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my profile</title>
+    <link rel="stylesheet" href="{% static 'pybo/css/profile.css' %}">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <!--로고부분-->
+                <a href="{% url 'pybo:index' %}">
+                    <img src="{% static 'pybo/images/home_white_24dp.png' %}" alt="홈버튼"></a>
+                </div>
+
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="#who">소개(who)</a></li>
+                    <li><a href="#job">경력(Job)</a></li>
+                    <li><a href="#skill">기술(Skill)</a></li>
+                </ul>
+            </nav>
+
+
+        </header>
+
+        <section id="who">
+            <div class="page-title">
+                <h1>Who?</h1>
+            </div>
+            <div class="content">
+                <div class="photo">
+                    <img src="{% static 'pybo/images/hometown.png' %}">
+                </div>
+                <div class="text">
+                    <p>안녕하세요. 반갑습니다.</p>
+                    <p>도시와 전원을 오가며 지냅니다.</p>
+                    <p>요즘은 파이썬에 빠져서</p>
+                    <p>웹사이트를 만들고 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="job">
+            <div class="page-title">
+                <h1>Career</h1>
+            </div>
+            <div class="content">
+                <div class="text">
+                    <ul id="career">
+                        <li>WFA (.NET) 프로그래밍 입문</li>
+                        <li>웹디자인 과정 입문</li>
+                        <li>파이썬 웹프로그래밍 과정 입문</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill">
+            <div class="page-title">
+                <h1>Skill</h1>
+            </div>
+            <div class="content">
+                <div class="photo">
+                    <img src="{% static 'pybo/images/healing.jpg' %}">
+                </div>
+                <div class="text">
+                    <p>작품을 클릭하면 사이트로 이동합니다.</p>
+                    <ol id="link">
+                        <li><a href="#">회원관리형 게시판</a></li>
+                        <li><a href="#">북마크 관리 페이지</a></li>
+                        <li><a href="#">팀 프로젝트 이름</a></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div id="bottommenu">
+                <ul>
+                    <li><a href="#">My Blog</a></li>
+                    <li><a href="#">SNS</a></li>
+                    <li><a href="#">email: abc@abc.com</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

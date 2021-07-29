@@ -1,0 +1,33 @@
+{% load static %}
+<!-- #static-사전 고정된 디렉터리인데 css, js, 부트스트랩 등을 넣어둔다.-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'pybo/css/bootstrap.css' %}">
+<!--  static 하위의 파일을 불러올 때의 경로명 설정을 잘봐라.-->
+  <script src="{% static 'pybo/js/watch.js' %}"></script>
+    <title>Welcome! PyWeb</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="jumbotron">
+<!--  점보트론은 제목글 쓰는 부트스트랩 명칭 -->
+  <div class="text-center">
+    <h1>Welcome! Have a nice Day!</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="text-center">
+    <img src="{% static 'pybo/images/cap1.png' %}" alt="인공지능 스피커 사진">
+    <p id="demo" class="my-3"></p>
+  </div>
+</div>
+
+
+<script src="{% static 'pybo/js/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'pybo/js/bootstrap.js' %}"></script>
+</body>
+</html>
