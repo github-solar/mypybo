@@ -1,9 +1,7 @@
 from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.shortcuts import render, get_object_or_404
-
 from pybo.models import Question
-
 
 def index(request):
     return render(request, 'pybo/index.html')
@@ -39,7 +37,6 @@ def board(request): #교재에서는 index 함수로 했다. 주의!
     #-내림차순으로 정렬
     paginator = Paginator(question_list, 10)
     page_obj = paginator.get_page(page)
-
     context = {'question_list': page_obj, 'page': page, 'kw': kw, 'so': so}
     return render(request, 'pybo/question_list.html', context)
     #return HttpResponse("pybo 환영합니다.")

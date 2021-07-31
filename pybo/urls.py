@@ -15,7 +15,6 @@ urlpatterns = [
     #질문등록
     path('question/create/', question_views.question_create, name='question_create'),
 
-
     #질문수정
     path('question/modify/<int:question_id>/', question_views.question_modify,
          name='question_modify'),

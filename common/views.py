@@ -17,4 +17,3 @@ def signup(request): #회원가입 화면 처리 함수
         form = UserForm()
     context = {'form': form}
     return render(request, 'common/signup.html', context)
-# Create your views here.

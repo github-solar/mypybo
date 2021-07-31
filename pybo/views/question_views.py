@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib import messages
 from pybo.forms import QuestionForm
 from pybo.models import Question
+from django.utils import timezone
 
 
 @login_required(login_url='common:login')
@@ -12,7 +13,6 @@ def question_create(request):  #질문 등록 함수 생성
         if form.is_valid():
             question = form.save(commit=False)
             question.author = request.user
-            from django.utils import timezone
             question.create_date = timezone.now()
             question.save()
             return redirect('pybo:board')
@@ -30,7 +30,6 @@ def question_modify(request, question_id):
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.user != question.author:
-        from django.contrib import messages
         messages.error(request, '수정권한이 없습니다.')
         return redirect('pybo:detail', question_id=question_id)
 
@@ -39,7 +38,6 @@ def question_modify(request, question_id):
         if form.is_valid():
             question = form.save(commit=False)
             question.author = request.user
-            from django.utils import timezone
             question.modify_date = timezone.now()
             question.save()
             return redirect('pybo:detail', question_id=question.id)
@@ -56,7 +54,6 @@ def question_delete(request, question_id):
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.user != question.author:
-        from django.contrib import messages
         messages.error(request, '삭제권한이 없습니다.')
         return redirect('pybo:detail', question_id=question_id)
     question.delete()

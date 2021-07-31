@@ -20,7 +20,6 @@ def answer_create(request, question_id):
             return redirect('pybo:detail', question_id=question.id)
     else:
         form = AnswerForm()
-
     context = {'question':question, 'form': form}
     return render(request, 'pybo/question_detail.html', context)
     #답변 등록은 리턴 render가 아니고 리다렉트로 해줘야 한다.

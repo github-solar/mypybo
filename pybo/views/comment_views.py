@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
-
 from pybo.forms import CommentForm
 from pybo.models import Question, Comment, Answer
 
@@ -37,8 +36,6 @@ def comment_modify_question(request, comment_id):
             comment.modify_date = timezone.now()
             comment.save()
             return redirect("pybo:detail", question_id=comment.question.id)
-
-
     else:
         form =CommentForm(instance=comment)
     context = {'form':form}
@@ -83,8 +80,6 @@ def comment_modify_answer(request, comment_id):
             comment.modify_date = timezone.now()
             comment.save()
             return redirect("pybo:detail", question_id=comment.answer.question.id)
-
-
     else:
         form = CommentForm(instance=comment)
     context = {'form':form}
