@@ -12,7 +12,8 @@
     </div>
     {% endif %}
     <h2 class="border-bottom py-2">{{ question.subject }}</h2>
-    <div class="row my-3"> <!-- 추천영역 생성 교재 212페이지 -->
+
+    <div class="row my-3"> <!-- 질문추천영역 스타트 교재 212페이지 -->
         <div class="col-1">
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">
                 {{ question.voter.count }}
@@ -20,7 +21,7 @@
             <a href="#" data-uri="{% url 'pybo:vote_question' question.id %}"
                 class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
-        <div class="col-11"> <!--            질문영역-->
+        <div class="col-11">        <!--질문영역-->
             <div class="card my-3">
                 <div class="card-body">
                     <div class="card-text" style="white-space: pre-line;">
@@ -28,14 +29,14 @@
                         {{ question.content }}
                     </div>
                     <div class="d-flex justify-content-end">
-        <!--                질문의 수정일시 표시 코딩 시작-->
+        <!--질문의 수정일시 표시 코딩 시작-->
                         {% if question.modify_date %}
                         <div class="badge badge-light p-2 text-left my-3">
                             <div class="mb-2">modified at</div>
                             <div>{{ question.modify_date }}</div>
                         </div>
                         {% endif %}
-        <!--                질문 답변 수정일시 표시 코딩 끝. -->
+        <!-- 질문 답변 수정일시 표시 코딩 끝. -->
                         <div class="badge badge-light p-2 text-left">
                             <div class="mb-2">{{ question.author.username }} (최초작성)</div>
                             <div>{{ question.create_date }}</div>
@@ -85,7 +86,7 @@
         {{ question.answer_set.count }}개의 답변이 있습니다.
     </h5>
     {% for answer in question.answer_set.all %}
-    <div class="row my-3"> <!-- 추천영역 생성 교재 212페이지 -->
+    <div class="row my-3"> <!-- 답변 추천영역 스타트 교재 212페이지 -->
         <div class="col-1">
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">
                 {{ answer.voter.count }}
